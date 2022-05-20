@@ -20,16 +20,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'labecastore'`, () => {
+  it(`should have as title 'labecastore.frontend'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('labecastore');
+    expect(app.title).toEqual('labecastore.frontend');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('labecastore app is running!');
+    expect(compiled.querySelector('.content span')?.textContent).toContain('labecastore.frontend app is running!');
   });
 });
