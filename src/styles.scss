@@ -1,1 +1,30 @@
-@import url('../node_modules/bootstrap/dist/css/bootstrap.min.css');
+/* @import url('../node_modules/bootstrap/dist/css/bootstrap.min.css'); */
+
+$branco: #ECF0F1;
+$cinza-claro: #C4C4C4;
+$cinza-escuro: #34495E;
+$cinza-black: #222f3e;
+$cinza-black-white: #576574;
+$roxo: #9B59B6;
+$verde: #2ECC71;
+$verde-escuro: #1aa855;
+$vermelho: #E74C3C;
+$vermelho-escuro: #b13a2d;
+
+$font1: 'Recursive', sans-serif;
+$font2: 'IBM Plex Sans', sans-serif;
+
+/* SCROOL BAR */
+::-webkit-scrollbar-track {
+  background-color: $branco;
+}
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-thumb {
+  background: $cinza-black;
+}
+
+body {
+  background-color: $branco;
+}
