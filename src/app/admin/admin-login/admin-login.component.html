@@ -1,0 +1,31 @@
+<div class="form-login container-fluid container-lg">
+  <img src="assets/img/admin-labeca-black.png" alt="">
+  <p class="title">Login</p>
+  <div class="row">
+    <div class="mb-3 col-12 col-lg-6">
+      <label for="nickname" class="form-label">Nickname</label>
+      <input type="text" class="form-control" id="nickname" [(ngModel)]="usuario.nickname">
+    </div>
+  </div>
+  <div class="row">
+    <div class="mb-3 col-12 col-lg-6">
+      <label for="senha" class="form-label">Senha</label>
+      <input type="password" class="form-control" id="senha" [(ngModel)]="usuario.password" >
+    </div>
+  </div>
+  <div class="row">
+    <div class="alert alert-danger w-30" role="alert" [ngClass]="{'true': this.alertDanger}">
+      Nome de usuário e senha estão incorretos!
+    </div>
+  </div>
+  <div class="row">
+    <div class="alert alert-warning" role="alert" [ngClass]="{'true': this.alertWarning}">
+      Por favor preencha todos os campos!
+    </div>
+
+  </div>
+
+  <div class="row">
+    <button type="submit" class="btn btn-success" (click)="fazerLogin()">Login</button>
+  </div>
+</div>
