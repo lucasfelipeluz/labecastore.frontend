@@ -1,0 +1,72 @@
+$branco: #ECF0F1;
+$cinza-claro: #C4C4C4;
+$cinza-escuro: #34495E;
+$cinza-black: #222f3e;
+$cinza-black-white: #576574;
+$roxo: #9B59B6;
+$verde: #2ECC71;
+$verde-escuro: #1aa855;
+$vermelho: #E74C3C;
+$vermelho-escuro: #b13a2d;
+
+$font1: 'Recursive', sans-serif;
+$font2: 'IBM Plex Sans', sans-serif;
+
+/* Mixins */
+@mixin mobile(){
+  @media(min-width: 576px){
+    @content;
+  }
+}
+@mixin sm(){
+  @media(min-width: 768px){
+    @content;
+  }
+}
+@mixin md(){
+  @media(min-width: 992px){
+    @content;
+  }
+}
+@mixin lg(){
+  @media(min-width: 1200px){
+    @content;
+  }
+}
+@mixin xl(){
+  @media(min-width: 1400px){
+    @content;
+  }
+}
+
+.forms-new-product{
+  margin-top: 20px;
+  margin-bottom: 20px;
+  .title {
+    font-family: $font1;
+    font-size: 30px;
+    text-align: center;
+  }
+  .sub-title {
+    font-family: $font1;
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 0;
+  }
+
+  form {
+
+    input, label, textarea {
+      font-family: $font2;
+
+
+      
+    }
+    .buttons{
+      display: flex;
+      justify-content: space-around;
+      gap: 20px;
+    }
+  }
+
+}

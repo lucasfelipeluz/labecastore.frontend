@@ -1,0 +1,167 @@
+$branco: #ECF0F1;
+$cinza-claro: #C4C4C4;
+$cinza-escuro: #34495E;
+$cinza-black: #222f3e;
+$cinza-black-white: #576574;
+$roxo: #9B59B6;
+$verde: #2ECC71;
+$verde-escuro: #1aa855;
+$vermelho: #E74C3C;
+$vermelho-escuro: #b13a2d;
+
+$font1: 'Recursive', sans-serif;
+$font2: 'IBM Plex Sans', sans-serif;
+
+/* Mixins */
+@mixin mobile(){
+  @media(min-width: 576px){
+    @content;
+  }
+}
+@mixin sm(){
+  @media(min-width: 768px){
+    @content;
+  }
+}
+@mixin md(){
+  @media(min-width: 992px){
+    @content;
+  }
+}
+@mixin lg(){
+  @media(min-width: 1200px){
+    @content;
+  }
+}
+@mixin xl(){
+  @media(min-width: 1400px){
+    @content;
+  }
+}
+
+.main-admin {
+  padding: 10px;
+
+  .title-main {
+    font-family: $font1;
+    text-align: center;
+    font-size: 35px;
+    margin: 0 0 10px 0;
+  }
+
+  .content {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    gap: 60px;
+
+    @include sm(){
+      grid-template-columns: 1fr 1fr ;
+    }
+    
+    @include md(){
+      grid-template-columns: 1fr 1fr;
+    }
+
+    @include lg(){
+      grid-template-columns: 1fr 1fr 1fr;
+
+    }
+
+    .product {
+      height: 500px;
+      width: 350px;
+      border-left: 1px solid rgba(0, 0, 0, 0.219);
+      border-right: 1px solid rgba(0, 0, 0, 0.219);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.219);
+      background-color: white;
+      overflow: hidden;
+      text-decoration: none;
+      transition: 0.15s linear;
+      border-radius: 5px;
+      position: relative;
+
+      .status.true {
+        position: absolute;
+        padding: 5px 10px;
+        background-color: $verde;
+        color: $branco;
+        font-family: $font1;
+      }
+      .status.false {
+        position: absolute;
+        padding: 5px 10px;
+        background-color: $vermelho;
+        color: $branco;
+        font-family: $font1;
+      }
+
+      &:hover{
+        box-shadow: 0px 5px 10px 1px rgba(0, 0, 0, 0.281);
+      }
+
+      .img-product{
+        width: 350px;
+        height: 350px;
+        background-image: url(/assets/img/fundo-produto.png);
+        background-position: center;
+        
+        img {
+          width: 350px;
+          height: 350px;
+          object-fit: cover;
+
+        }
+      }
+
+      .description {
+        padding: 10px;
+        height: 150px;
+        display: grid;
+        grid-template-rows: 30px 1fr 20px;
+        
+        *{
+          margin: 0; padding: 0;
+
+        }
+
+        .title-description {
+          font-family: $font2;
+          font-size: 25px;
+          text-align: center;
+          color: $cinza-black;
+        }
+        .price {
+          font-family: $font2;
+          font-size: 45px;
+          font-weight: 800;
+          text-align: center;
+          color: $cinza-escuro;
+        }
+        .categories{
+          display: flex;
+          justify-content: space-around;
+          
+
+          .category {
+            min-width: 60px;
+            font-size: 12px;
+            background-color: $cinza-black;
+            color: white;
+            font-family: $font2;
+            text-align: center;
+            padding: 0 5px;
+            border-radius: 3px;
+          }
+        }
+
+
+      }
+    }
+  }
+
+
+
+}
+
+

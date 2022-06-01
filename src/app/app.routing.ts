@@ -1,15 +1,20 @@
-import { ModuleWithProviders } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-
-import { AppComponent } from './app.component'
-import { HeaderComponent } from './Components/header/header.component';
+import { AdminLoginComponent } from './admin/admin-login/admin-login.component';
+import { AuthAdminService } from './guards/auth-admin.service';
 import { HomeComponent } from './home/home.component';
-import { LoginComponent } from './login/login.component';
+import { NotFoundComponent } from './responses/not-found/not-found.component';
+import { UnavailableComponent } from './responses/unavailable/unavailable.component';
 
 const app_routes: Routes = [
-  { path: '', component: HomeComponent },
-  { path: 'login', component: LoginComponent },
-  { path: 'header', component: HeaderComponent }
+  { path: 'admin', canActivate: [ AuthAdminService], loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule) },
+  { path: 'admin/login', component: AdminLoginComponent},
+  { path: '', component: UnavailableComponent },
+  { path: '**', component: NotFoundComponent}
 ]
 
-export const routes: ModuleWithProviders<RouterModule> = RouterModule.forRoot(app_routes)
+@NgModule({
+  imports: [RouterModule.forRoot(app_routes)],
+  exports: [RouterModule]
+  
+}) export class AppRouting {}

@@ -1,0 +1,40 @@
+$branco: #ECF0F1;
+$cinza-claro: #C4C4C4;
+$cinza-escuro: #34495E;
+$cinza-black: #222f3e;
+$cinza-black-white: #576574;
+$roxo: #9B59B6;
+$verde: #2ECC71;
+$verde-escuro: #1aa855;
+$vermelho: #E74C3C;
+$vermelho-escuro: #b13a2d;
+
+$font1: 'Recursive', sans-serif;
+$font2: 'IBM Plex Sans', sans-serif;
+
+.boas-vindas-admin{
+  padding: 10px;
+  
+  .mensagem {
+    background-color: $cinza-black;
+    padding: 10px 5px 20px 5px;
+    border-radius: 3px;
+    box-shadow: 1px 5px 5px 1px rgba(0, 0, 0, 0.308);
+    
+    .titulo {
+      font-family: $font1;
+      color: $branco;
+      text-align: center;
+      font-size: 25px;
+      margin-bottom: 15px;
+      
+    }
+    
+    .texto {
+      font-family: $font2;
+      text-align: center;
+      color: $branco;
+
+    }
+  }
+}

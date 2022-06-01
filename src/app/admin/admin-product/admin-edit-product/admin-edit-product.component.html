@@ -1,0 +1,107 @@
+<div class="forms-new-product container-fluid container-lg">
+  <p class="title">Editar Produto</p>
+
+  <form action="" class="forms-control">
+
+    <div class="row">
+      <div class="col-12 col-lg-6 mb-2">
+        <label for="title" class="form-label">Nome do produto</label>
+        <input class="form-control" id="title" type="text" required value="{{ product.title }}">
+      </div>
+      <div class="col-12 col-lg-6 mb-2">
+        <label for="description" class="form-label">Descrição</label>
+        <textarea class="form-control" id="description" cols="30" rows="2" value="{{ product.description }}"></textarea>
+      </div>
+    </div>
+    <div class="row mb-4">
+      <div class="col-6 col-lg-6 mb-2">
+        <label for="year" class="form-label">Ano lançamento</label>
+        <input class="form-control" id="year" type="text" required value="{{ product.year }}">
+      </div>
+      <div class="col-6 col-lg-6 mb-2">
+        <label for="price" class="form-label">Preço</label>
+        <input class="form-control" id="price" type="text" required value="{{ product.price }}">
+      </div>
+    </div>
+    <div class="row mb-4">
+      <div class="row mb-2">
+        <p class="sub-title">Estoque de tamanhos</p>
+      </div>
+      <div class="row">
+        <div class="col-2 col-lg-2 mb-2">
+          <label for="inventoryPP" class="form-label">PP</label>
+          <input class="form-control" id="inventoryPP" type="number" value="{{ product.inventoryPP }}">
+        </div>
+        <div class="col-2 col-lg-2 mb-2">
+          <label for="inventoryP" class="form-label">P</label>
+          <input class="form-control" id="inventoryP" type="number" value="{{ product.inventoryP }}">
+        </div>
+        <div class="col-2 col-lg-2 mb-2">
+          <label for="inventoryM" class="form-label">M</label>
+          <input class="form-control" id="inventoryM" type="number" value="{{ product.inventoryM }}">
+        </div>
+        <div class="col-2 col-lg-2 mb-2">
+          <label for="inventoryG" class="form-label">G</label>
+          <input class="form-control" id="inventoryG" type="number" value="{{ product.inventoryG }}">
+        </div>
+        <div class="col-2 col-lg-2 mb-2">
+          <label for="inventoryGG" class="form-label">GG</label>
+          <input class="form-control" id="inventoryGG" type="number" value="{{ product.inventoryGG }}">
+        </div>
+        <div class="col-2 col-lg-1 mb-2">
+          <label for="inventoryEG" class="form-label">EG</label>
+          <input class="form-control" id="inventoryEG" type="number" value="{{ product.inventoryEG }}">
+        </div>
+        <div class="col-2 col-lg-1 mb-2">
+          <label for="inventoryEGG" class="form-label">EGG</label>
+          <input class="form-control" id="inventoryEGG" type="number" value="{{ product.inventoryEGG }}">
+        </div>
+      </div>
+    </div>
+    <div class="row mb-4">
+      <div class="col-12 col-lg-6 mb-4">
+
+        <div class="row">
+          <div class="sub-title">Categorias</div>
+        </div>
+        <div class="row mb-1" *ngFor="let categoryInProduct of product.category; let i = index">
+          <select class="form-select" [attr.id]="'category' + i">
+            <option 
+            *ngFor="let category of categories" 
+            value="{{ category.id }}" 
+            [attr.selected]="categoryInProduct.CategoryId === category.id ? true : null"
+          >{{ category.name }}</option>
+          </select>
+        </div>
+
+      </div>
+
+      <div class="col-12 col-lg-6">
+
+        <div class="row">
+          <div class="sub-title">Imagens</div>
+        </div>
+        <div class="row mb-1" *ngFor="let imagesInProduct of product.image; let i = index">
+            
+          <select class="form-select" [attr.id]="'images' + i">
+            <option 
+            *ngFor="let image of images" 
+            value="{{ image.id }}" 
+            [attr.selected]="imagesInProduct.ImageId === image.id ? true : null"
+          >{{ image.filename }}</option>
+            
+          </select>
+
+        </div>
+          
+
+      </div>
+    </div>
+
+    <div class="buttons">
+      <button type="submit" class="btn btn-success">Editar</button>
+      <a routerLink="/admin/product/77" class="btn btn-warning">Cancelar</a>
+    </div>
+
+  </form>
+</div>
