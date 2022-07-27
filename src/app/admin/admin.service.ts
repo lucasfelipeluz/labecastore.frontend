@@ -4,56 +4,55 @@ import { Router } from '@angular/router';
 import { Usuario } from './admin-login/usuario';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class AdminService {
-
   private usuarioAutenticado: boolean = false;
 
   public Products: Array<Object> = [
     {
       id: 76,
-      title: "Corinthians II",
-      description: "Camisa",
-      year: "19/20",
+      title: 'Corinthians II',
+      description: 'Camisa',
+      year: '19/20',
       price: 125.45,
       inventoryPP: 0,
       inventoryP: 0,
       inventoryM: 0,
-      inventoryG: 5,
+      inventoryG: 0,
       inventoryGG: 0,
       inventoryEG: 0,
       inventoryEGG: 0,
       category: [
         {
           CategoryId: 104,
-          NomeCategoria: "categoria",
-          SlugCategoria: "categoria"
+          NomeCategoria: 'categoria',
+          SlugCategoria: 'categoria',
         },
         {
           CategoryId: 204,
-          NomeCategoria: "jogador",
-          SlugCategoria: "jogador"
-        }
+          NomeCategoria: 'jogador',
+          SlugCategoria: 'jogador',
+        },
       ],
       image: [
         {
           ImageId: 200,
-          filename: "foto.png",
-          url: "https://images.vexels.com/media/users/3/149045/isolated/preview/a6758f9278544d50f30e0c9478ea952a-icone-de-camiseta-masculina-branca.png"
+          filename: 'foto.png',
+          url: 'https://images.vexels.com/media/users/3/149045/isolated/preview/a6758f9278544d50f30e0c9478ea952a-icone-de-camiseta-masculina-branca.png',
         },
         {
           ImageId: 201,
-          filename: "foto2.png",
-          url: "https://images.vexels.com/media/users/3/149045/isolated/preview/a6758f9278544d50f30e0c9478ea952a-icone-de-camiseta-masculina-branca.png"
-        }
-      ]
+          filename: 'foto2.png',
+          url: 'https://images.vexels.com/media/users/3/149045/isolated/preview/a6758f9278544d50f30e0c9478ea952a-icone-de-camiseta-masculina-branca.png',
+        },
+      ],
     },
     {
       id: 77,
-      title: "Corinthians I",
-      description: "Camisa",
-      year: "19/20",
+      title: 'Corinthians I',
+      description: 'Camisa',
+      year: '19/20',
       price: 95.45,
       inventoryPP: 0,
       inventoryP: 0,
@@ -65,118 +64,117 @@ export class AdminService {
       category: [
         {
           CategoryId: 204,
-          NomeCategoria: "jogador",
-          SlugCategoria: "jogador"
+          NomeCategoria: 'jogador',
+          SlugCategoria: 'jogador',
         },
         {
           CategoryId: 104,
-          NomeCategoria: "categoria",
-          SlugCategoria: "categoria"
+          NomeCategoria: 'categoria',
+          SlugCategoria: 'categoria',
         },
         {
           CategoryId: 205,
-          NomeCategoria: "mangalonga",
-          SlugCategoria: "categoria"
-        }
+          NomeCategoria: 'mangalonga',
+          SlugCategoria: 'categoria',
+        },
       ],
       image: [
         {
           ImageId: 200,
-          filename: "foto.png",
-          url: "https://images.vexels.com/media/users/3/149045/isolated/preview/a6758f9278544d50f30e0c9478ea952a-icone-de-camiseta-masculina-branca.png"
+          filename: 'foto.png',
+          url: 'https://images.vexels.com/media/users/3/149045/isolated/preview/a6758f9278544d50f30e0c9478ea952a-icone-de-camiseta-masculina-branca.png',
         },
         {
           ImageId: 202,
-          filename: "foto3.png",
-          url: "https://images.vexels.com/media/users/3/149045/isolated/preview/a6758f9278544d50f30e0c9478ea952a-icone-de-camiseta-masculina-branca.png"
-        }
-      ]
-    }
-  ]
+          filename: 'foto3.png',
+          url: 'https://images.vexels.com/media/users/3/149045/isolated/preview/a6758f9278544d50f30e0c9478ea952a-icone-de-camiseta-masculina-branca.png',
+        },
+      ],
+    },
+  ];
 
   public Categories: Array<Object> = [
     {
       id: 104,
-      name: "categoria",
-      slug: "categoria"
+      name: 'categoria',
+      slug: 'categoria',
     },
     {
       id: 204,
-      name: "jogador",
-      slug: "jogador"
+      name: 'jogador',
+      slug: 'jogador',
     },
     {
       id: 205,
       name: 'mangalonga',
-      slug: 'manga-longa'
-    }
-  ]
+      slug: 'manga-longa',
+    },
+  ];
 
   public Images: Array<Object> = [
     {
       id: 200,
       filename: 'foto.png',
-      url: "https://images.vexels.com/media/users/3/149045/isolated/preview/a6758f9278544d50f30e0c9478ea952a-icone-de-camiseta-masculina-branca.png"
+      url: 'https://images.vexels.com/media/users/3/149045/isolated/preview/a6758f9278544d50f30e0c9478ea952a-icone-de-camiseta-masculina-branca.png',
     },
     {
       id: 201,
       filename: 'foto2.png',
-      url: "https://images.vexels.com/media/users/3/149045/isolated/preview/a6758f9278544d50f30e0c9478ea952a-icone-de-camiseta-masculina-branca.png"
+      url: 'https://images.vexels.com/media/users/3/149045/isolated/preview/a6758f9278544d50f30e0c9478ea952a-icone-de-camiseta-masculina-branca.png',
     },
     {
       id: 202,
       filename: 'foto3.png',
-      url: "https://images.vexels.com/media/users/3/149045/isolated/preview/a6758f9278544d50f30e0c9478ea952a-icone-de-camiseta-masculina-branca.png"
-    }
-  ]
+      url: 'https://images.vexels.com/media/users/3/149045/isolated/preview/a6758f9278544d50f30e0c9478ea952a-icone-de-camiseta-masculina-branca.png',
+    },
+  ];
 
-  constructor(private router: Router) { }
+  constructor(private router: Router) {}
 
-  getStatusAuth(): boolean{
+  getStatusAuth(): boolean {
     return this.usuarioAutenticado;
   }
 
   logOut(): void {
-    this.usuarioAutenticado = false
+    this.usuarioAutenticado = false;
   }
-
 
   login(usuario: Usuario) {
-    if (!usuario.nickname || !usuario.password){
-
+    if (!usuario.nickname || !usuario.password) {
       return null;
-    } else if (usuario.nickname !== 'adminLB' || usuario.password !== 'adminLB'){
+    } else if (
+      usuario.nickname !== 'adminLB' ||
+      usuario.password !== 'adminLB'
+    ) {
       return false;
-    }
-    else {
+    } else {
       this.usuarioAutenticado = true;
-      this.router.navigate(['/admin'])
-      return
+      this.router.navigate(['/admin']);
+      return;
     }
   }
 
-  getAdmin(){
+  getAdmin() {
     return {
-      nome: "Administrador"
-    }
+      nome: 'Lucas',
+    };
   }
 
-  getProducts(){
+  getProducts() {
     return this.Products;
   }
 
   getProductsById(id: number): any {
-    return this.Products.filter( (value: any, number, array ) => {
-      return value.id === id
-    })[0]
+    return this.Products.filter((value: any, number, array) => {
+      return value.id === id;
+    })[0];
   }
 
-  getAllCategories(){
+  getAllCategories() {
     return this.Categories;
   }
 
-  getAllImages (){
+  getAllImages() {
     return this.Images;
   }
-
 }

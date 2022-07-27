@@ -7,14 +7,19 @@ import { NotFoundComponent } from './responses/not-found/not-found.component';
 import { UnavailableComponent } from './responses/unavailable/unavailable.component';
 
 const app_routes: Routes = [
-  { path: 'admin', canActivate: [ AuthAdminService], loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule) },
-  { path: 'admin/login', component: AdminLoginComponent},
-  { path: '', component: UnavailableComponent },
-  { path: '**', component: NotFoundComponent}
-]
+  {
+    path: 'admin',
+    /* canActivate: [AuthAdminService], */ loadChildren: () =>
+      import('./admin/admin.module').then((m) => m.AdminModule),
+  },
+  { path: 'admin/login', component: AdminLoginComponent },
+  { path: '', component: HomeComponent },
+  // { path: '', component: UnavailableComponent },
+  // { path: '**', component: NotFoundComponent}
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(app_routes)],
-  exports: [RouterModule]
-  
-}) export class AppRouting {}
+  exports: [RouterModule],
+})
+export class AppRouting {}
