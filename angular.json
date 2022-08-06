@@ -111,5 +111,8 @@
       }
     }
   },
-  "defaultProject": "labecastore.frontend"
+  "defaultProject": "labecastore.frontend",
+  "cli": {
+    "analytics": "b7e2523b-41e2-4315-8bc7-a9d10970d839"
+  }
 }

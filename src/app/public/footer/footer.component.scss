@@ -38,3 +38,18 @@ $font2: 'IBM Plex Sans', sans-serif;
     @content;
   }
 }
+
+
+footer {
+  height: 100px; width: 100%;
+  display: flex; justify-content: center; align-items: center;
+  flex-direction: column;
+  font-family: $font1;
+  color: #ECF0F1;
+  background-color: #222f3e;
+  user-select: none;
+  
+  .logo{
+    height: 50px;
+  }
+}
