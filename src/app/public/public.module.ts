@@ -20,7 +20,13 @@ import { MainComponent } from './main/main.component';
     FooterComponent,
     MainComponent,
   ],
-  imports: [CommonModule, RouterModule, HttpClientModule, PublicRouting],
+  imports: [
+    CommonModule,
+    RouterModule,
+    FormsModule,
+    HttpClientModule,
+    PublicRouting,
+  ],
   providers: [PublicService],
 })
 export class PublicModule {}
