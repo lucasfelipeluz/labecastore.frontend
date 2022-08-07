@@ -29,10 +29,7 @@ export class MainComponent implements OnInit {
           };
         });
 
-        if (this.products) {
-          this.contentLoaded = true;
-          console.log(this.products);
-        }
+        if (this.products) this.contentLoaded = true;
       },
       (error) => {
         console.log(error);

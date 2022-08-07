@@ -12,6 +12,6 @@ export class PublicService {
   constructor(private http: HttpClient) {}
 
   public getAllProduct() {
-    return this.http.get(`${this.urlAPI}/products?images=true`);
+    return this.http.get(`${this.urlAPI}/products?images=true&active=true`);
   }
 }
