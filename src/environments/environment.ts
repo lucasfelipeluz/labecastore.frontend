@@ -3,8 +3,9 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  run: false,
+  run: true,
   production: false,
+  url: 'https://labecastore.herokuapp.com',
 };
 
 /*

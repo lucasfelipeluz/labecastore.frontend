@@ -1,11 +1,13 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
+import { environment } from 'src/environments/environment';
+
 @Injectable({
   providedIn: 'root',
 })
 export class PublicService {
-  public urlAPI: String = 'http://54.207.251.62:4545';
+  public urlAPI: String = environment.url;
 
   constructor(private http: HttpClient) {}
 
