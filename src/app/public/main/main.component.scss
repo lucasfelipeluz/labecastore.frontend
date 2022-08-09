@@ -60,6 +60,7 @@ main {
     display: flex;
     justify-content: space-around;
     row-gap: 30px;
+    column-gap: 20px;
     flex-wrap: wrap;
 
     .carregamento {
@@ -75,6 +76,8 @@ main {
 
 .product {
   width: 90%;
+  min-width: 300px;
+  max-width: 350px;
   position: relative;
   text-decoration: none;
   overflow: hidden;
@@ -99,7 +102,7 @@ main {
 
   .img-product {
     height: 380px;
-    background-image: url(../../../assets/img/fundo-produto.png);
+    background-image: url(/assets/img/fundo-produto.png);
     background-position: center;
     background-repeat: no-repeat;
     overflow: hidden;

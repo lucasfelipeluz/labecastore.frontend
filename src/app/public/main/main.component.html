@@ -7,7 +7,7 @@
     <p class="carregamento" [ngClass]="{'true': contentLoaded,'false': !contentLoaded}">
       Carregando...</p>
 
-    <a *ngFor=" let product of products" class="product">
+    <a *ngFor=" let product of products" class="product" [routerLink]="['product', product.id]">
       <p class="status true" [ngClass]="{'true': calcuteInventory(product),'false': !calcuteInventory(product)}">
         {{ calcuteInventory(product) === true ? "EM ESTOQUE" : "APENAS POR ENCOMENDA" }}
       </p>

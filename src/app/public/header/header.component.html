@@ -5,7 +5,7 @@
       <img src="assets/img/logo-completa.png" alt="">
     </div>
 
-    <a href="" class="nav-button">
+    <a class="nav-button" (click)="hideMenuToggle()">
 
       <div class="btn-nav">
         <div class="btn-item"></div>
@@ -27,5 +27,30 @@
 
   </div>
 
+  <div class="menu-toggle" [ngClass]="{'true': showMenuToggle, 'false': !showMenuToggle}">
+
+    <div class="menu">
+      <div class="list-menu">
+        <p>Categorias mais buscadas</p>
+        <a href=""> Camisas torcedor </a>
+        <a href=""> Camisas jogador </a>
+        <a href=""> Femininas </a>
+        <hr>
+        <p>Contatos</p>
+        <a href=""> WhatsApp </a>
+        <a href=""> Instagram </a>
+        <hr>
+        <p>Outros</p>
+        <a href=""> Encomendar camisa </a>
+        <a href=""> Deixar sugestão </a>
+
+
+      </div>
+    </div>
+
+    <button class="close-toggle" (click)="hideMenuToggle()">
+      <img src=" assets/icons/button_close.svg" alt="">
+    </button>
+  </div>
 
 </header>
