@@ -1,0 +1,39 @@
+<main class="container-fluid">
+
+  <p class="title-main">Detalhes do produto</p>
+
+  <p class="carregamento" [ngClass]="{'true': contentLoaded,'false': !contentLoaded}">
+    Carregando...</p>
+
+
+  <div *ngIf="contentLoaded === true" class="content">
+
+    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-indicators">
+        <button *ngFor="let image of product.images; let i = index" type="button"
+          data-bs-target="#carouselExampleIndicators" [ngClass]="{'active': i < 1}" aria-current="true"
+          [attr.data-bs-slide-to]="i" [attr.aria-label]="'Slide '+ i"></button>
+      </div>
+      <div class="carousel-inner">
+        <div *ngFor="let image of product.images; let i = index" class="carousel-item" [ngClass]="{'active': i < 1}">
+          <img src="data:image/png;base64,{{image.base64}}" class="d-block w-100" alt="...">
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+        data-bs-slide="prev">
+        <!-- <span class="carousel-control-prev-icon" aria-hidden="true"></span> -->
+        <img src="assets/icons/seta-esquerda.svg" alt="">
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+        data-bs-slide="next">
+        <!-- <span class="carousel-control-next-icon" aria-hidden="true"></span> -->
+        <img src="assets/icons/seta-direita.svg" alt="">
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+
+
+  </div>
+
+</main>

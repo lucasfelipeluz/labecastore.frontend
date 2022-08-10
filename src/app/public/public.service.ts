@@ -14,4 +14,8 @@ export class PublicService {
   public getAllProduct() {
     return this.http.get(`${this.urlAPI}/products?images=true&active=true`);
   }
+
+  public getProductById(id: string) {
+    return this.http.get(`${this.urlAPI}/products?id=${id}&images=true`);
+  }
 }

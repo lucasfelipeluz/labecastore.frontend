@@ -12,6 +12,7 @@ import { HeaderComponent } from './header/header.component';
 import { PublicComponent } from './public.component';
 import { FooterComponent } from './footer/footer.component';
 import { MainComponent } from './main/main.component';
+import { ProductComponent } from './product/product.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { MainComponent } from './main/main.component';
     PublicComponent,
     FooterComponent,
     MainComponent,
+    ProductComponent,
   ],
   imports: [
     CommonModule,
