@@ -1,39 +1,134 @@
 <main class="container-fluid">
 
-  <p class="title-main">Detalhes do produto</p>
+  <p class="title-main container-lg">Detalhes do produto</p>
 
   <p class="carregamento" [ngClass]="{'true': contentLoaded,'false': !contentLoaded}">
     Carregando...</p>
 
 
-  <div *ngIf="contentLoaded === true" class="content">
+  <div *ngIf="contentLoaded === true" class="content container-lg">
 
-    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-      <div class="carousel-indicators">
-        <button *ngFor="let image of product.images; let i = index" type="button"
-          data-bs-target="#carouselExampleIndicators" [ngClass]="{'active': i < 1}" aria-current="true"
-          [attr.data-bs-slide-to]="i" [attr.aria-label]="'Slide '+ i"></button>
-      </div>
-      <div class="carousel-inner">
-        <div *ngFor="let image of product.images; let i = index" class="carousel-item" [ngClass]="{'active': i < 1}">
-          <img src="data:image/png;base64,{{image.base64}}" class="d-block w-100" alt="...">
+    <div class="imagens">
+
+      <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+          <button *ngFor="let image of product.images; let i = index" type="button"
+            data-bs-target="#carouselExampleIndicators" [ngClass]="{'active': i < 1}" aria-current="true"
+            [attr.data-bs-slide-to]="i" [attr.aria-label]="'Slide '+ i"></button>
         </div>
+        <div class="carousel-inner">
+          <div *ngFor="let image of product.images; let i = index" class="carousel-item" [ngClass]="{'active': i < 1}">
+            <img src="data:image/png;base64,{{image.base64}}" class="d-block w-100" alt="...">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+          data-bs-slide="prev">
+          <!-- <span class="carousel-control-prev-icon" aria-hidden="true"></span> -->
+          <img src="assets/icons/seta-esquerda.svg" alt="">
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+          data-bs-slide="next">
+          <!-- <span class="carousel-control-next-icon" aria-hidden="true"></span> -->
+          <img src="assets/icons/seta-direita.svg" alt="">
+          <span class="visually-hidden">Next</span>
+        </button>
       </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
-        data-bs-slide="prev">
-        <!-- <span class="carousel-control-prev-icon" aria-hidden="true"></span> -->
-        <img src="assets/icons/seta-esquerda.svg" alt="">
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
-        data-bs-slide="next">
-        <!-- <span class="carousel-control-next-icon" aria-hidden="true"></span> -->
-        <img src="assets/icons/seta-direita.svg" alt="">
-        <span class="visually-hidden">Next</span>
-      </button>
+
+    </div>
+
+    <div class="painel">
+
+      <div class="info">
+
+        <p class="titulo-camisa">
+          {{ product.title }} | {{ product.year }}
+        </p>
+        <p class="descricao-camisa">
+          {{ product.description }}
+        </p>
+
+        <div class="valor">
+
+          <p class="avista">
+            <span>{{ product.price | currency: 'R$' }}</span><br> à vista, pix ou no débito
+          </p>
+          <p class="prazo">
+            para pagamento no cartão de crédito pode haver juros da maquineta.
+          </p>
+          <div class="frete">
+            FRETE GRÁTIS
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="tamanhos">
+
+        <p class="titulo-tamanho">Tamanhos disponíveis</p>
+
+        <div class="conteudo-tamanho">
+
+          <p class="tamanho"
+            [ngClass]="{'true': checkInventory(product.inventoryPP), 'false': !checkInventory(product.inventoryPP)}">PP:
+            {{
+            product.inventoryPP }}</p>
+          <p class="tamanho"
+            [ngClass]="{'true': checkInventory(product.inventoryP), 'false': !checkInventory(product.inventoryP)}">P: {{
+            product.inventoryP }}</p>
+          <p class="tamanho"
+            [ngClass]="{'true': checkInventory(product.inventoryM), 'false': !checkInventory(product.inventoryM)}">M: {{
+            product.inventoryM }}</p>
+          <p class="tamanho"
+            [ngClass]="{'true': checkInventory(product.inventoryG), 'false': !checkInventory(product.inventoryG)}">G: {{
+            product.inventoryG }}</p>
+          <p class="tamanho"
+            [ngClass]="{'true': checkInventory(product.inventoryGG), 'false': !checkInventory(product.inventoryGG)}">GG:
+            {{
+            product.inventoryGG }}</p>
+          <p class="tamanho"
+            [ngClass]="{'true': checkInventory(product.inventoryEG), 'false': !checkInventory(product.inventoryEG)}">EG:
+            {{
+            product.inventoryEG }}</p>
+          <p class="tamanho"
+            [ngClass]="{'true': checkInventory(product.inventoryEGG), 'false': !checkInventory(product.inventoryEGG)}">
+            EGG:
+            {{
+            product.inventoryEGG }}</p>
+
+        </div>
+
+
+      </div>
+
+      <div class="categorias">
+
+        <p class="titulo-categoria">Categorias</p>
+
+        <div class="conteudo-categorias">
+
+          <a class="categoria" [routerLink]="['/categories', category.slug]"
+            *ngFor="let category of product.categories">{{ category.name }}</a>
+
+        </div>
+
+      </div>
+
+      <div class="comprar">
+        <a href="https://api.whatsapp.com/send?phone=5581986761216&text=Ol%C3%A1%2C%20vi%20o%20an%C3%BAncio%20da%20camisa%20do%20{{product.title}}%20-%20%23{{product.id}}%2C%20gostaria%20de%20fazer%20a%20compra%20dela"
+          target="_blank" class="whatsapp">
+          <img src="assets/icons/whatsapp.svg" alt="">
+          COMPRAR PELO WHATSAPP
+        </a>
+
+      </div>
+
     </div>
 
 
   </div>
+
+
 
 </main>

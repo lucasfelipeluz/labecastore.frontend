@@ -13,6 +13,7 @@ import { PublicComponent } from './public.component';
 import { FooterComponent } from './footer/footer.component';
 import { MainComponent } from './main/main.component';
 import { ProductComponent } from './product/product.component';
+import { CategoriesComponent } from './categories/categories.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { ProductComponent } from './product/product.component';
     FooterComponent,
     MainComponent,
     ProductComponent,
+    CategoriesComponent,
   ],
   imports: [
     CommonModule,
