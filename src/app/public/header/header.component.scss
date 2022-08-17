@@ -112,6 +112,10 @@ header {
       input {
         height: 40px;
         font-family: $font2;
+
+        &::placeholder {
+          color: $cinza-black;
+        }
       }
 
       button {

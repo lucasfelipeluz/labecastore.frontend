@@ -184,14 +184,11 @@ main {
             padding: 10px;
             border-radius: 3px;
             color: $branco;
+            background-color: #34495e69;
 
-            &.true {
-              background-color: $verde;
-            }
+            &.true {}
 
-            &.false {
-              background-color: $vermelho;
-            }
+            &.false {}
           }
         }
       }

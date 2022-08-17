@@ -18,4 +18,8 @@ export class PublicService {
   public getProductById(id: string) {
     return this.http.get(`${this.urlAPI}/products?id=${id}&images=true`);
   }
+
+  public getCategoryBySlug(slug: string) {
+    return this.http.get(`${this.urlAPI}/products/categories/${slug}`);
+  }
 }

@@ -14,6 +14,11 @@ if (environment.run === true) {
     loadChildren: () =>
       import('./public/public.module').then((m) => m.PublicModule),
   });
+  app_routes.push({
+    path: 'admin',
+    loadChildren: () =>
+      import('./admin/admin.module').then((m) => m.AdminModule),
+  });
 }
 
 if (environment.run === false) {

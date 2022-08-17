@@ -57,7 +57,7 @@
             para pagamento no cartão de crédito pode haver juros da maquineta.
           </p>
           <div class="frete">
-            FRETE GRÁTIS
+            FRETE GRÁTIS PARA REGIÃO DE PASSIRA/PE
           </div>
 
         </div>
@@ -70,33 +70,51 @@
 
         <div class="conteudo-tamanho">
 
-          <p class="tamanho"
-            [ngClass]="{'true': checkInventory(product.inventoryPP), 'false': !checkInventory(product.inventoryPP)}">PP:
-            {{
-            product.inventoryPP }}</p>
-          <p class="tamanho"
-            [ngClass]="{'true': checkInventory(product.inventoryP), 'false': !checkInventory(product.inventoryP)}">P: {{
-            product.inventoryP }}</p>
-          <p class="tamanho"
-            [ngClass]="{'true': checkInventory(product.inventoryM), 'false': !checkInventory(product.inventoryM)}">M: {{
-            product.inventoryM }}</p>
-          <p class="tamanho"
-            [ngClass]="{'true': checkInventory(product.inventoryG), 'false': !checkInventory(product.inventoryG)}">G: {{
-            product.inventoryG }}</p>
-          <p class="tamanho"
-            [ngClass]="{'true': checkInventory(product.inventoryGG), 'false': !checkInventory(product.inventoryGG)}">GG:
-            {{
-            product.inventoryGG }}</p>
-          <p class="tamanho"
-            [ngClass]="{'true': checkInventory(product.inventoryEG), 'false': !checkInventory(product.inventoryEG)}">EG:
-            {{
-            product.inventoryEG }}</p>
-          <p class="tamanho"
-            [ngClass]="{'true': checkInventory(product.inventoryEGG), 'false': !checkInventory(product.inventoryEGG)}">
-            EGG:
-            {{
-            product.inventoryEGG }}</p>
-
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th scope="col">Tamanho</th>
+                <th scope="col">Disponibilidade</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th>PP</th>
+                <td *ngIf="product.inventoryPP > 0">Disponível</td>
+                <td *ngIf="product.inventoryPP < 1">Apenas por encomenda</td>
+              </tr>
+              <tr>
+                <th>P</th>
+                <td *ngIf="product.inventoryP > 0">Disponível</td>
+                <td *ngIf="product.inventoryP < 1">Apenas por encomenda</td>
+              </tr>
+              <tr>
+                <th>M</th>
+                <td *ngIf="product.inventoryM > 0">Disponível</td>
+                <td *ngIf="product.inventoryM < 1">Apenas por encomenda</td>
+              </tr>
+              <tr>
+                <th>G</th>
+                <td *ngIf="product.inventoryG > 0">Disponível</td>
+                <td *ngIf="product.inventoryG < 1">Apenas por encomenda</td>
+              </tr>
+              <tr>
+                <th>GG</th>
+                <td *ngIf="product.inventoryGG > 0">Disponível</td>
+                <td *ngIf="product.inventoryGG < 1">Apenas por encomenda</td>
+              </tr>
+              <tr>
+                <th>EG</th>
+                <td *ngIf="product.inventoryEG > 0">Disponível</td>
+                <td *ngIf="product.inventoryEG < 1">Apenas por encomenda</td>
+              </tr>
+              <tr>
+                <th>EGG</th>
+                <td *ngIf="product.inventoryEGG > 0">Disponível</td>
+                <td *ngIf="product.inventoryEGG < 1">Apenas por encomenda</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
 
 

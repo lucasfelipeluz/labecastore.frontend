@@ -14,6 +14,8 @@ import { FooterComponent } from './footer/footer.component';
 import { MainComponent } from './main/main.component';
 import { ProductComponent } from './product/product.component';
 import { CategoriesComponent } from './categories/categories.component';
+import { OrderComponent } from './order/order.component';
+import { SuggestionComponent } from './suggestion/suggestion.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +25,8 @@ import { CategoriesComponent } from './categories/categories.component';
     MainComponent,
     ProductComponent,
     CategoriesComponent,
+    OrderComponent,
+    SuggestionComponent,
   ],
   imports: [
     CommonModule,

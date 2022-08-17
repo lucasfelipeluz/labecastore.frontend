@@ -19,7 +19,7 @@ export class MainComponent implements OnInit {
       (responseServer: any) => {
         const products = responseServer.data;
         this.products = products.map((item: any) => {
-          const imgMain = item.images.map((img: any) => {
+          const imgMain = item.images.filter((img: any) => {
             if (img.main === true) return img;
           });
 
