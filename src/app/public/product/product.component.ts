@@ -29,7 +29,6 @@ export class ProductComponent implements OnInit {
         this.product = data.data[0];
 
         if (this.product) this.contentLoaded = true;
-        console.log(this.product);
       },
       (error) => {
         console.log(error);
