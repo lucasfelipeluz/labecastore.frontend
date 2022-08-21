@@ -164,8 +164,14 @@ header {
           width: 20vw;
         }
 
+        .logo-menu {
+          width: 100px;
+          margin-bottom: 15px;
+        }
+
         .list-menu {
           width: 100%;
+          overflow-x: scroll;
 
           display: flex;
           flex-direction: column;

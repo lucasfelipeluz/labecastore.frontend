@@ -69,7 +69,8 @@ main {
 
     @include md() {
       display: grid;
-      grid-template-columns: 1fr 300px;
+      grid-template-columns: 1fr 350px;
+      column-gap: 15px;
     }
 
     .carousel {
@@ -126,6 +127,7 @@ main {
 
 
     .painel {
+
 
       .info {
         margin-top: 15px;

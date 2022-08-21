@@ -17,7 +17,7 @@
             data-bs-target="#carouselExampleIndicators" [ngClass]="{'active': i < 1}" aria-current="true"
             [attr.data-bs-slide-to]="i" [attr.aria-label]="'Slide '+ i"></button>
         </div>
-        <div *ngIf="product.images.length > 1" class="carousel-inner">
+        <div *ngIf="product.images.length > 0" class="carousel-inner">
           <div *ngFor="let image of product.images; let i = index" class="carousel-item" [ngClass]="{'active': i < 1}">
             <img src="data:image/png;base64,{{image.base64}}" class="d-block w-100" alt="...">
           </div>
