@@ -1,58 +1,62 @@
 <header>
 
-  <div class="header-top">
+  <div class="content-header container-fluid container-lg">
 
-    <a class="logo" routerLink="">
-      <img src="assets/img/logo-completa.png" alt="">
-    </a>
+    <div class="header-top">
 
-    <a class="nav-button" (click)="hideMenuToggle()">
+      <a class="nav-button" (click)="hideMenuToggle()">
 
-      <div class="btn-nav">
-        <div class="btn-item"></div>
-        <div class="btn-item"></div>
-        <div class="btn-item"></div>
-      </div>
+        <div class="btn-nav">
+          <div class="btn-item"></div>
+          <div class="btn-item"></div>
+          <div class="btn-item"></div>
+        </div>
 
 
-    </a>
+      </a>
+      <a class="logo" routerLink="">
+        <img src="assets/img/logo-completa.png" alt="">
+      </a>
 
-  </div>
-
-  <div class="header-bottom">
-    <div class="busca">
-      <input type="text" placeholder="O que está procurando?">
-      <button><img src="assets/icons/icon-search.svg" alt="" srcset=""></button>
 
     </div>
 
-  </div>
+    <div class="header-bottom">
+      <div class="busca">
+        <input type="text" placeholder="O que está procurando?">
+        <button><img src="assets/icons/icon-search.svg" alt="" srcset=""></button>
 
-  <div class="menu-toggle" [ngClass]="{'true': showMenuToggle, 'false': !showMenuToggle}">
-
-    <div class="menu">
-      <div class="list-menu">
-        <p>Categorias mais buscadas</p>
-        <a [routerLink]="['categories', 'copa-do-mundo-2022']"> Copa do Mundo 2022 </a>
-        <a [routerLink]="['categories', 'brasileirao']"> Brasileirão </a>
-        <a [routerLink]="['categories', 'torcedor']"> Camisas torcedor </a>
-        <a [routerLink]="['categories', 'jogador']"> Camisas jogador </a>
-        <a [routerLink]="['categories', 'feminina']"> Feminina </a>
-        <a [routerLink]="['categories', 'selecao']"> Seleções </a>
-        <hr>
-        <p>Contatos</p>
-        <a href="https://api.whatsapp.com/send?phone=5581986761216" target="_blank"> WhatsApp </a>
-        <a href="https://www.instagram.com/labeca.store" target="_blank"> Instagram </a>
-        <hr>
-        <p>Outros</p>
-        <a href="https://api.whatsapp.com/send?phone=5581986761216&text=Ol%C3%A1%2C%20gostaria%20de%20encomendar%20uma%20camisa"
-          target="_blank"> Encomendar camisa </a>
       </div>
+
     </div>
 
-    <button class="close-toggle" (click)="hideMenuToggle()">
-      <img src=" assets/icons/button_close.svg" alt="">
-    </button>
+    <div class="menu-toggle" [ngClass]="{'true': showMenuToggle, 'false': !showMenuToggle}">
+
+      <div class="menu">
+        <div class="list-menu">
+          <p>Categorias mais buscadas</p>
+          <a [routerLink]="['categories', 'copa-do-mundo-2022']"> Copa do Mundo 2022 </a>
+          <a [routerLink]="['categories', 'brasileirao']"> Brasileirão </a>
+          <a [routerLink]="['categories', 'torcedor']"> Camisas torcedor </a>
+          <a [routerLink]="['categories', 'jogador']"> Camisas jogador </a>
+          <a [routerLink]="['categories', 'feminina']"> Feminina </a>
+          <a [routerLink]="['categories', 'selecao']"> Seleções </a>
+          <hr>
+          <p>Contatos</p>
+          <a href="https://api.whatsapp.com/send?phone=5581986761216" target="_blank"> WhatsApp </a>
+          <a href="https://www.instagram.com/labeca.store" target="_blank"> Instagram </a>
+          <hr>
+          <p>Outros</p>
+          <a href="https://api.whatsapp.com/send?phone=5581986761216&text=Ol%C3%A1%2C%20gostaria%20de%20encomendar%20uma%20camisa"
+            target="_blank"> Encomendar camisa </a>
+        </div>
+      </div>
+
+      <button class="close-toggle" (click)="hideMenuToggle()">
+        <img src=" assets/icons/button_close.svg" alt="">
+      </button>
+    </div>
+
   </div>
 
 </header>
