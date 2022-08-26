@@ -5,6 +5,7 @@
 export const environment = {
   run: false,
   production: false,
+  url: 'https://labecastore.herokuapp.com',
 };
 
 /*

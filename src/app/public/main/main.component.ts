@@ -8,13 +8,28 @@ import { PublicService } from '../public.service';
 })
 export class MainComponent implements OnInit {
   public products: any;
+  public imgMain: any;
+
+  public contentLoaded: boolean = false;
 
   constructor(private publicService: PublicService) {}
 
   ngOnInit(): void {
     this.publicService.getAllProduct().subscribe(
       (responseServer: any) => {
-        this.products = responseServer.data;
+        const products = responseServer.data;
+        this.products = products.map((item: any) => {
+          const imgMain = item.images.filter((img: any) => {
+            if (img.main === true) return img;
+          });
+
+          return {
+            ...item,
+            imgMain,
+          };
+        });
+
+        if (this.products) this.contentLoaded = true;
       },
       (error) => {
         console.log(error);

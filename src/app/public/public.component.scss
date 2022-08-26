@@ -1,0 +1,52 @@
+$branco: #ECF0F1;
+$cinza-claro: #C4C4C4;
+$cinza-escuro: #34495E;
+$cinza-black: #222f3e;
+$cinza-black-white: #576574;
+$roxo: #9B59B6;
+$verde: #2ECC71;
+$verde-escuro: #1aa855;
+$vermelho: #E74C3C;
+$vermelho-escuro: #b13a2d;
+
+$font1: 'Recursive', sans-serif;
+$font2: 'IBM Plex Sans', sans-serif;
+
+/* Mixins */
+@mixin mobile() {
+  @media(min-width: 576px) {
+    @content;
+  }
+}
+
+@mixin sm() {
+  @media(min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin md() {
+  @media(min-width: 992px) {
+    @content;
+  }
+}
+
+@mixin lg() {
+  @media(min-width: 1200px) {
+    @content;
+  }
+}
+
+@mixin xl() {
+  @media(min-width: 1400px) {
+    @content;
+  }
+}
+
+
+main {
+  background-image: url(/assets/img/background-main.jpg);
+  background-size: 100%;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}

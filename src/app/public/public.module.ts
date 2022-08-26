@@ -12,6 +12,10 @@ import { HeaderComponent } from './header/header.component';
 import { PublicComponent } from './public.component';
 import { FooterComponent } from './footer/footer.component';
 import { MainComponent } from './main/main.component';
+import { ProductComponent } from './product/product.component';
+import { CategoriesComponent } from './categories/categories.component';
+import { OrderComponent } from './order/order.component';
+import { SuggestionComponent } from './suggestion/suggestion.component';
 
 @NgModule({
   declarations: [
@@ -19,8 +23,18 @@ import { MainComponent } from './main/main.component';
     PublicComponent,
     FooterComponent,
     MainComponent,
+    ProductComponent,
+    CategoriesComponent,
+    OrderComponent,
+    SuggestionComponent,
   ],
-  imports: [CommonModule, RouterModule, HttpClientModule, PublicRouting],
+  imports: [
+    CommonModule,
+    RouterModule,
+    FormsModule,
+    HttpClientModule,
+    PublicRouting,
+  ],
   providers: [PublicService],
 })
 export class PublicModule {}
