@@ -24,18 +24,7 @@ export class CategoriesComponent implements OnInit {
     this.slugCategory = this.activatedRoute.snapshot.params['category'];
     this.publicService.getCategoryBySlug(this.slugCategory).subscribe(
       (data: any) => {
-        const products = data.data;
-        this.products = products.map((item: any) => {
-          const imgMain = item.images.filter((img: any) => {
-            if (img.main === true) return img;
-          });
-
-          return {
-            ...item,
-            imgMain,
-          };
-        });
-        this.nameCategory = data.info.name;
+        this.products = data.data;
 
         if (this.products) this.contentLoaded = true;
         if (this.products.length < 1) this.withoutProducts = true;

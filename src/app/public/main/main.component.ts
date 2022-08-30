@@ -17,17 +17,7 @@ export class MainComponent implements OnInit {
   ngOnInit(): void {
     this.publicService.getAllProduct().subscribe(
       (responseServer: any) => {
-        const products = responseServer.data;
-        this.products = products.map((item: any) => {
-          const imgMain = item.images.filter((img: any) => {
-            if (img.main === true) return img;
-          });
-
-          return {
-            ...item,
-            imgMain,
-          };
-        });
+        this.products = responseServer.data;
 
         if (this.products) this.contentLoaded = true;
       },

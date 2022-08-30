@@ -11,11 +11,8 @@
       <p class="status true" [ngClass]="{'true': calcuteInventory(product),'false': !calcuteInventory(product)}">
         {{ calcuteInventory(product) === true ? "EM ESTOQUE" : "APENAS POR ENCOMENDA" }}
       </p>
-      <div class="img-product" *ngIf="product.imgMain.length > 0">
-        <img src="data:image/png;base64,{{product.imgMain[0].base64}}" alt="">
-      </div>
-      <div class="img-product" *ngIf="product.imgMain.length < 1">
-        <img src="assets/img/default.png" alt="">
+      <div class="img-product">
+        <img src="{{product.img_main.url}}" alt="">
       </div>
       <div class="description">
         <p class="title-description"> {{ product.title }}

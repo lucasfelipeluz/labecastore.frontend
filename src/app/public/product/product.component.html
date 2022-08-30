@@ -19,7 +19,7 @@
         </div>
         <div *ngIf="product.images.length > 0" class="carousel-inner">
           <div *ngFor="let image of product.images; let i = index" class="carousel-item" [ngClass]="{'active': i < 1}">
-            <img src="data:image/png;base64,{{image.base64}}" class="d-block w-100" alt="...">
+            <img src="{{image.url}}" class="d-block w-100" alt="...">
           </div>
         </div>
         <div *ngIf="product.images.length < 1" class="msg-img text-center">

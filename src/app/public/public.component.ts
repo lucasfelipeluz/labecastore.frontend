@@ -11,14 +11,5 @@ export class PublicComponent implements OnInit {
 
   constructor(private publicService: PublicService) {}
 
-  ngOnInit(): void {
-    this.publicService.getAllProduct().subscribe(
-      (responseServer: any) => {
-        this.products = responseServer.data;
-      },
-      (error) => {
-        console.log(error);
-      }
-    );
-  }
+  ngOnInit(): void {}
 }
