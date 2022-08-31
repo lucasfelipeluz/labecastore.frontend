@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { PublicService } from '../public.service';
 
@@ -21,10 +21,18 @@ export class CategoriesComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    this.activatedRoute.paramMap.subscribe((paramMap) => {
+      this.loadData();
+    });
+    this.loadData();
+  }
+
+  loadData() {
     this.slugCategory = this.activatedRoute.snapshot.params['category'];
     this.publicService.getCategoryBySlug(this.slugCategory).subscribe(
       (data: any) => {
         this.products = data.data;
+        this.nameCategory = data.info.name;
 
         if (this.products) this.contentLoaded = true;
         if (this.products.length < 1) this.withoutProducts = true;
