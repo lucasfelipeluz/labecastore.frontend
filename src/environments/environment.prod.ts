@@ -1,5 +1,5 @@
 export const environment = {
-  run: false,
+  run: true,
   production: true,
   url: 'https://api.labecafut.com.br',
 };
