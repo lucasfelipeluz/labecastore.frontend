@@ -22,11 +22,10 @@
     </div>
 
     <div class="header-bottom">
-      <div class="busca">
-        <input type="text" placeholder="O que está procurando?">
-        <button><img src="assets/icons/icon-search.svg" alt="" srcset=""></button>
-
-      </div>
+      <form class="busca">
+        <input [formControl]="queryField" type="text" placeholder="O que está procurando?">
+        <button (click)="search()"><img src="assets/icons/icon-search.svg" alt="" srcset=""></button>
+      </form>
 
     </div>
 

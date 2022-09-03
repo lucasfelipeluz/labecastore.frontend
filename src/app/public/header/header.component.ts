@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -8,9 +10,22 @@ import { Component, OnInit } from '@angular/core';
 export class HeaderComponent implements OnInit {
   showMenuToggle: boolean = false;
 
-  constructor() {}
+  readonly queryField = new FormControl();
+
+  constructor(private router: Router) {}
 
   ngOnInit(): void {}
+
+  search() {
+    const value: any = this.queryField.value;
+    if (value) {
+      if (value.trim() === '') {
+      } else {
+        const campo = this.queryField.value;
+        this.router.navigate(['search', campo]);
+      }
+    }
+  }
 
   hideMenuToggle() {
     this.showMenuToggle = !this.showMenuToggle;

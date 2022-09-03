@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 import { RouterModule } from '@angular/router';
@@ -16,6 +16,7 @@ import { ProductComponent } from './product/product.component';
 import { CategoriesComponent } from './categories/categories.component';
 import { OrderComponent } from './order/order.component';
 import { SuggestionComponent } from './suggestion/suggestion.component';
+import { SearchComponent } from './search/search.component';
 
 @NgModule({
   declarations: [
@@ -27,8 +28,10 @@ import { SuggestionComponent } from './suggestion/suggestion.component';
     CategoriesComponent,
     OrderComponent,
     SuggestionComponent,
+    SearchComponent,
   ],
   imports: [
+    ReactiveFormsModule,
     CommonModule,
     RouterModule,
     FormsModule,

@@ -23,12 +23,12 @@ if (environment.run === true) {
 
 if (environment.run === false) {
   app_routes.push({
-    path: '**',
+    path: '',
     component: UnavailableComponent,
   });
 }
 
-// app_routes.push({ path: '**', component: NotFoundComponent });
+app_routes.push({ path: '**', component: UnavailableComponent });
 
 @NgModule({
   imports: [RouterModule.forRoot(app_routes)],

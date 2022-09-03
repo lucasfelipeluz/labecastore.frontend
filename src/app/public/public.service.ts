@@ -22,4 +22,8 @@ export class PublicService {
   public getCategoryBySlug(slug: string) {
     return this.http.get(`${this.urlAPI}/products/categories/${slug}`);
   }
+
+  public search(keyword: string) {
+    return this.http.get(`${this.urlAPI}/search/${keyword}`);
+  }
 }

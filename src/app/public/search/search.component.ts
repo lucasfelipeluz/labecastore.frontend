@@ -1,19 +1,19 @@
-import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { PublicService } from '../public.service';
 
 @Component({
-  selector: 'app-categories',
-  templateUrl: './categories.component.html',
-  styleUrls: ['./categories.component.scss'],
+  selector: 'app-search',
+  templateUrl: './search.component.html',
+  styleUrls: ['./search.component.scss'],
 })
-export class CategoriesComponent implements OnInit {
-  public slugCategory: any;
-  public products: any;
-  public nameCategory: any;
+export class SearchComponent implements OnInit {
   public contentLoaded: boolean = false;
+  public products: any;
+  public categories: any;
+  public keyword: any;
   public error: boolean = false;
-  public withoutProducts: boolean = false;
+  public notFound: boolean = false;
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -22,22 +22,27 @@ export class CategoriesComponent implements OnInit {
 
   ngOnInit(): void {
     this.activatedRoute.paramMap.subscribe(() => {
-      this.loadData();
+      this.loadContent();
     });
-    this.loadData();
   }
 
-  loadData() {
-    this.slugCategory = this.activatedRoute.snapshot.params['category'];
-    this.publicService.getCategoryBySlug(this.slugCategory).subscribe(
+  loadContent() {
+    this.keyword = this.activatedRoute.snapshot.params['keyword'];
+    this.publicService.search(this.keyword).subscribe(
       (data: any) => {
-        this.products = data.data;
-        this.nameCategory = data.info.name;
+        console.log(data);
+        this.products = data.data.products;
+        this.categories = data.data.categories;
 
-        if (this.products) this.contentLoaded = true;
-        if (this.products.length < 1) this.withoutProducts = true;
+        if (this.products.length < 1 && this.categories.length < 1) {
+          this.contentLoaded = true;
+          this.notFound = true;
+        }
+
+        this.contentLoaded = true;
       },
       (error) => {
+        console.log(error);
         this.error = true;
       }
     );

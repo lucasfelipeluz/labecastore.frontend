@@ -1,0 +1,44 @@
+<main class="container-fluid container-lg">
+
+  <p class="title-main">Resultados de: {{ keyword }}</p>
+
+  <div class="content-product">
+
+    <p class="carregamento" [ngClass]="{'true': contentLoaded,'false': !contentLoaded}">
+      Carregando...</p>
+
+    <p class="erro text-center" [ngClass]="{'true': error,'false': !error}">
+      Ops! Ocorreu um erro, mas já estamos tentando corrigir. <br>Tente novamente mais tarde!</p>
+
+    <p class="not-found text-center" [ngClass]="{'true': notFound,'false': !notFound}">
+      Nenhum produto ou categoria encontrado!</p>
+
+
+    <a *ngFor=" let product of products" class="product" [routerLink]="['product', product.id]">
+      <p class="status true" [ngClass]="{'true': calcuteInventory(product),'false': !calcuteInventory(product)}">
+        {{ calcuteInventory(product) === true ? "EM ESTOQUE" : "APENAS POR ENCOMENDA" }}
+      </p>
+      <div class="img-product">
+        <img src="{{product.img_main.url}}" alt="">
+      </div>
+      <div class="description">
+        <p class="title-description"> {{ product.title }}
+          <span class="year">{{ product.year }}</span>
+        </p>
+        <div class="price">
+          <p class="avista">
+            {{ product.price | currency: 'R$' }}
+          </p>
+          <p class="cartao">ou 3x {{ (product.price + 10 ) / 3 | currency: 'R$' }} </p>
+        </div>
+        <div class="categories">
+          <p *ngFor="let category of product.categories" class="category"> {{ category.name }} </p>
+        </div>
+      </div>
+    </a>
+
+
+
+  </div>
+
+</main>

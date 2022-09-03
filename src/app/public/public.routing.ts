@@ -4,6 +4,7 @@ import { CategoriesComponent } from './categories/categories.component';
 import { MainComponent } from './main/main.component';
 import { ProductComponent } from './product/product.component';
 import { PublicComponent } from './public.component';
+import { SearchComponent } from './search/search.component';
 import { SuggestionComponent } from './suggestion/suggestion.component';
 
 const public_routes: Routes = [
@@ -16,17 +17,18 @@ const public_routes: Routes = [
       {
         path: 'product/:id',
         component: ProductComponent,
-        children: [{ path: '', component: MainComponent }],
       },
       {
         path: 'categories/:category',
         component: CategoriesComponent,
-        children: [{ path: '', component: MainComponent }],
       },
       {
         path: 'suggestion',
         component: SuggestionComponent,
-        children: [{ path: '', component: MainComponent }],
+      },
+      {
+        path: 'search/:keyword',
+        component: SearchComponent,
       },
     ],
   },
