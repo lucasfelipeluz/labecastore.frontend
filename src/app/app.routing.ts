@@ -26,9 +26,8 @@ if (environment.run === false) {
     path: '',
     component: UnavailableComponent,
   });
+  app_routes.push({ path: '**', component: UnavailableComponent });
 }
-
-app_routes.push({ path: '**', component: UnavailableComponent });
 
 @NgModule({
   imports: [RouterModule.forRoot(app_routes)],

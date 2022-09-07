@@ -44,19 +44,17 @@ $font2: 'IBM Plex Sans', sans-serif;
 }
 
 
-footer {
-  height: 100px;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  font-family: $font1;
-  color: #ECF0F1;
-  background-color: #222f3e;
-  user-select: none;
+main {
+  min-height: 100vh;
+  padding: 5px;
+  padding: 5px 5px 50px 5px;
+  background-color: $branco;
 
-  .logo {
-    height: 50px;
+  .carregando {
+    font-family: $font1;
+  }
+
+  form {
+    margin-top: 20px;
   }
 }

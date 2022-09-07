@@ -1,1 +1,28 @@
-<p>main works!</p>
+<main class="container-fluid container-lg">
+
+  <p class="title-main">Visão Geral</p>
+
+  <div class="content-product">
+
+    <!-- <p class="carregamento" [ngClass]="{'true': contentLoaded,'false': !contentLoaded}">
+      Carregando...</p> -->
+
+
+    <div *ngFor=" let product of products" class="product" class="card" style="width: 18rem;">
+      <img src="{{product.img_main.url}}" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">{{ product.title }}</h5>
+        <p class="card-text">{{ product.description }}</p>
+        <p class="card-text">Situação: {{ calcuteInventory(product) === true ? "Em estoque" : "Apenas por encomenda" }}
+          <br>
+          Postado: {{ product.active === true ? "Sim" : "Não" }} <br>
+          Criado por: {{ product.createdBy }}
+        </p>
+        <a href="#" class="btn btn-warning btn-sm m-1">Editar</a>
+        <a href="#" class="btn btn-danger btn-sm">Apagar</a>
+      </div>
+    </div>
+
+  </div>
+
+</main>
