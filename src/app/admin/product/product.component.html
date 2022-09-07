@@ -1,0 +1,156 @@
+<main class="container-fluid container-lg">
+
+  <p class="title-main container-lg">Detalhes do produto</p>
+
+  <!-- <p class="carregamento" [ngClass]="{'true': contentLoaded,'false': !contentLoaded}">
+    Carregando...</p> -->
+
+
+  <!-- <div *ngIf="contentLoaded === true" class="content container-lg">
+
+
+    <div class="imagens">
+
+      <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+          <button *ngFor="let image of product.images; let i = index" type="button"
+            data-bs-target="#carouselExampleIndicators" [ngClass]="{'active': i < 1}" aria-current="true"
+            [attr.data-bs-slide-to]="i" [attr.aria-label]="'Slide '+ i"></button>
+        </div>
+        <div *ngIf="product.images.length > 0" class="carousel-inner">
+          <div *ngFor="let image of product.images; let i = index" class="carousel-item" [ngClass]="{'active': i < 1}">
+            <img src="{{image.url}}" class="d-block w-100" alt="...">
+          </div>
+        </div>
+        <div *ngIf="product.images.length < 1" class="msg-img text-center">
+          No momento não temos imagens
+        </div>
+        <button *ngIf="product.images.length > 1" class="carousel-control-prev" type="button"
+          data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+
+          <img src="assets/icons/seta-esquerda.svg" alt="">
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button *ngIf="product.images.length > 1" class="carousel-control-next" type="button"
+          data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+
+          <img src="assets/icons/seta-direita.svg" alt="">
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+
+    </div>
+
+    <div class="painel">
+
+      <div class="info">
+
+        <p class="titulo-camisa">
+          {{ product.title }} | {{ product.year }}
+        </p>
+        <p class="descricao-camisa">
+          {{ product.description }}
+        </p>
+
+        <div class="valor">
+
+          <p class="avista">
+            <span>{{ product.price | currency: 'R$' }}</span><br> à vista, pix ou no débito
+          </p>
+          <p class="prazo">
+            para pagamento no cartão de crédito pode haver juros da maquineta.
+          </p>
+          <div class="frete">
+            FRETE GRÁTIS PARA REGIÃO DE PASSIRA/PE
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="tamanhos">
+
+        <p class="titulo-tamanho">Tamanhos disponíveis</p>
+
+        <div class="conteudo-tamanho">
+
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th scope="col">Tamanho</th>
+                <th scope="col">Disponibilidade</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th>PP</th>
+                <td *ngIf="product.inventoryPP > 0">Disponível</td>
+                <td *ngIf="product.inventoryPP < 1">Apenas por encomenda</td>
+              </tr>
+              <tr>
+                <th>P</th>
+                <td *ngIf="product.inventoryP > 0">Disponível</td>
+                <td *ngIf="product.inventoryP < 1">Apenas por encomenda</td>
+              </tr>
+              <tr>
+                <th>M</th>
+                <td *ngIf="product.inventoryM > 0">Disponível</td>
+                <td *ngIf="product.inventoryM < 1">Apenas por encomenda</td>
+              </tr>
+              <tr>
+                <th>G</th>
+                <td *ngIf="product.inventoryG > 0">Disponível</td>
+                <td *ngIf="product.inventoryG < 1">Apenas por encomenda</td>
+              </tr>
+              <tr>
+                <th>GG</th>
+                <td *ngIf="product.inventoryGG > 0">Disponível</td>
+                <td *ngIf="product.inventoryGG < 1">Apenas por encomenda</td>
+              </tr>
+              <tr>
+                <th>EG</th>
+                <td *ngIf="product.inventoryEG > 0">Disponível</td>
+                <td *ngIf="product.inventoryEG < 1">Apenas por encomenda</td>
+              </tr>
+              <tr>
+                <th>EGG</th>
+                <td *ngIf="product.inventoryEGG > 0">Disponível</td>
+                <td *ngIf="product.inventoryEGG < 1">Apenas por encomenda</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+
+      </div>
+
+      <div class="categorias">
+
+        <p class="titulo-categoria">Categorias</p>
+
+        <div class="conteudo-categorias">
+
+          <a class="categoria" [routerLink]="['/categories', category.slug]"
+            *ngFor="let category of product.categories">{{ category.name }}</a>
+
+        </div>
+
+      </div>
+
+      <div class="comprar">
+        <a href="https://api.whatsapp.com/send?phone=5581986761216&text=Ol%C3%A1%2C%20vi%20o%20an%C3%BAncio%20da%20camisa%20do%20{{product.title}}%20-%20%23{{product.id}}%2C%20gostaria%20de%20fazer%20a%20compra%20dela"
+          target="_blank" class="whatsapp">
+          <img src="assets/icons/whatsapp.svg" alt="">
+          COMPRAR PELO WHATSAPP
+        </a>
+
+      </div>
+
+    </div>
+
+
+  </div> -->
+
+
+
+</main>

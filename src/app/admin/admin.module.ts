@@ -11,6 +11,7 @@ import { FooterComponent } from './footer/footer.component';
 import { LoginComponent } from './login/login.component';
 import { AdminService } from './admin.service';
 import { AdminGuard } from './guards/admin.guard';
+import { ProductComponent } from './product/product.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { AdminGuard } from './guards/admin.guard';
     HeaderComponent,
     FooterComponent,
     LoginComponent,
+    ProductComponent,
   ],
   imports: [
     CommonModule,

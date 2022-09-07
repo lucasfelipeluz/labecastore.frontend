@@ -29,7 +29,7 @@
 
     </div>
 
-    <div class="menu-toggle" [ngClass]="{'true': showMenuToggle, 'false': !showMenuToggle}" (click)="hideMenuToggle()">
+    <div class="menu-toggle" [ngClass]="{'true': showMenuToggle, 'false': !showMenuToggle}">
 
       <div class="menu">
 
@@ -37,20 +37,21 @@
 
         <div class="list-menu">
           <p>Categorias mais buscadas</p>
-          <a [routerLink]="['categories', 'copa-do-mundo-2022']"> Copa do Mundo 2022 </a>
-          <a [routerLink]="['categories', 'brasileirao']"> Brasileirão </a>
-          <a [routerLink]="['categories', 'torcedor']"> Camisas torcedor </a>
-          <a [routerLink]="['categories', 'jogador']"> Camisas jogador </a>
-          <a [routerLink]="['categories', 'feminina']"> Feminina </a>
-          <a [routerLink]="['categories', 'selecao']"> Seleções </a>
+          <a [routerLink]="['categories', 'copa-do-mundo-2022']" (click)="hideMenuToggle()"> Copa do Mundo 2022 </a>
+          <a [routerLink]="['categories', 'brasileirao']" (click)="hideMenuToggle()"> Brasileirão </a>
+          <a [routerLink]="['categories', 'torcedor']" (click)="hideMenuToggle()"> Camisas torcedor </a>
+          <a [routerLink]="['categories', 'jogador']" (click)="hideMenuToggle()"> Camisas jogador </a>
+          <a [routerLink]="['categories', 'feminina']" (click)="hideMenuToggle()"> Feminina </a>
+          <a [routerLink]="['categories', 'selecao']" (click)="hideMenuToggle()"> Seleções </a>
           <hr>
           <p>Contatos</p>
-          <a href="https://api.whatsapp.com/send?phone=5581986761216" target="_blank"> WhatsApp </a>
-          <a href="https://www.instagram.com/labecafut/" target="_blank"> Instagram </a>
+          <a href="https://api.whatsapp.com/send?phone=5581986761216" target="_blank" (click)="hideMenuToggle()">
+            WhatsApp </a>
+          <a href="https://www.instagram.com/labecafut/" target="_blank" (click)="hideMenuToggle()"> Instagram </a>
           <hr>
           <p>Outros</p>
           <a href="https://api.whatsapp.com/send?phone=5581986761216&text=Ol%C3%A1%2C%20gostaria%20de%20encomendar%20uma%20camisa"
-            target="_blank"> Encomendar camisa </a>
+            target="_blank" (click)="hideMenuToggle()"> Encomendar camisa </a>
         </div>
       </div>
 

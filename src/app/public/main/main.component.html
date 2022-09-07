@@ -22,11 +22,11 @@
           <p class="avista">
             {{ product.price | currency: 'R$' }}
           </p>
-          <p class="cartao">ou 3x {{ (product.price + 10 ) / 3 | currency: 'R$' }} </p>
+          <p class="cartao">ou 3x de R$ 37,57</p>
         </div>
-        <div class="categories">
+        <!-- <div class="categories">
           <p *ngFor="let category of product.categories" class="category"> {{ category.name }} </p>
-        </div>
+        </div> -->
       </div>
     </a>
 

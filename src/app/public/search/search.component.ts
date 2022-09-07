@@ -22,6 +22,8 @@ export class SearchComponent implements OnInit {
 
   ngOnInit(): void {
     this.activatedRoute.paramMap.subscribe(() => {
+      this.error = false;
+      this.notFound = false;
       this.loadContent();
     });
   }
@@ -30,7 +32,6 @@ export class SearchComponent implements OnInit {
     this.keyword = this.activatedRoute.snapshot.params['keyword'];
     this.publicService.search(this.keyword).subscribe(
       (data: any) => {
-        console.log(data);
         this.products = data.data.products;
         this.categories = data.data.categories;
 

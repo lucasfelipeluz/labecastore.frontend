@@ -31,8 +31,6 @@ export class LoginComponent implements OnInit {
           this.router.navigate(['admin']);
           this.loading = false;
           this.adminService.setToken(data.data);
-
-          console.log(data);
         },
         (error) => {
           this.error = true;

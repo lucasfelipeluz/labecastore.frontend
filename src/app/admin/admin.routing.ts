@@ -4,14 +4,20 @@ import { AdminComponent } from './admin.component';
 import { AdminGuard } from './guards/admin.guard';
 import { LoginComponent } from './login/login.component';
 import { MainComponent } from './main/main.component';
+import { ProductComponent } from './product/product.component';
 
 const admin_routes: Routes = [
   {
     path: '',
     component: AdminComponent,
     children: [
-      { path: '', canActivate: [AdminGuard], component: MainComponent },
+      { path: '', component: MainComponent },
       { path: 'login', component: LoginComponent },
+      {
+        path: 'product/:id',
+        canActivate: [AdminGuard],
+        component: ProductComponent,
+      },
     ],
   },
 ];

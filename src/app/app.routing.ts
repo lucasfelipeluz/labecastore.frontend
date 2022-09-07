@@ -14,11 +14,11 @@ if (environment.run === true) {
     loadChildren: () =>
       import('./public/public.module').then((m) => m.PublicModule),
   });
-  app_routes.push({
-    path: 'admin',
-    loadChildren: () =>
-      import('./admin/admin.module').then((m) => m.AdminModule),
-  });
+  // app_routes.push({
+  //   path: 'admin',
+  //   loadChildren: () =>
+  //     import('./admin/admin.module').then((m) => m.AdminModule),
+  // });
 }
 
 if (environment.run === false) {
@@ -26,8 +26,9 @@ if (environment.run === false) {
     path: '',
     component: UnavailableComponent,
   });
-  app_routes.push({ path: '**', component: UnavailableComponent });
+  app_routes.push({ path: '**', component: NotFoundComponent });
 }
+app_routes.push({ path: '**', component: NotFoundComponent });
 
 @NgModule({
   imports: [RouterModule.forRoot(app_routes)],

@@ -22,6 +22,8 @@ export class CategoriesComponent implements OnInit {
 
   ngOnInit(): void {
     this.activatedRoute.paramMap.subscribe(() => {
+      this.error = false;
+      this.withoutProducts = false;
       this.loadData();
     });
     this.loadData();
