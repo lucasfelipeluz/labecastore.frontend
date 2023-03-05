@@ -1,0 +1,44 @@
+<main class="container-fluid container-lg">
+
+  <p *ngIf="contentLoaded" class="title-main">{{nameCategory}}</p>
+
+  <p class="carregamento" [ngClass]="{'true': contentLoaded,'false': !contentLoaded}">
+    Carregando...</p>
+
+  <p class="erro" [ngClass]="{'true': error}">
+    Aconteceu um erro!</p>
+
+  <p class="aviso" [ngClass]="{'true': withoutProducts}">
+    Nenhum produto encontrado!</p>
+
+  <div *ngIf="contentLoaded" class="content-product">
+
+    <a *ngFor=" let product of products" class="product" [routerLink]="['/product', product.id]">
+      <p class="status true" [ngClass]="{'true': calcuteInventory(product),'false': !calcuteInventory(product)}">
+        {{ calcuteInventory(product) === true ? "EM ESTOQUE" : "APENAS POR ENCOMENDA" }}
+      </p>
+      <div class="img-product" *ngIf="product.imgMain.length > 0">
+        <img src="data:image/png;base64,{{product.imgMain[0].base64.data}}" alt="">
+      </div>
+      <div class="img-product" *ngIf="product.imgMain.length < 1">
+        <img src="assets/img/default.png" alt="">
+      </div>
+      <div class="description">
+        <p class="title-description"> {{ product.title }}
+          <span class="year">{{ product.year }}</span>
+        </p>
+        <div class="price">
+          <p class="avista">
+            {{ product.price | currency: 'R$' }}
+          </p>
+          <p class="cartao">ou 3x {{ (product.price + 10 ) / 3 | currency: 'R$' }} </p>
+        </div>
+        <div class="categories">
+          <p *ngFor="let category of product.categories" class="category"> {{ category.name }} </p>
+        </div>
+      </div>
+    </a>
+
+  </div>
+
+</main>
